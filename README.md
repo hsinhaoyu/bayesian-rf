@@ -1,0 +1,2 @@
+# An application of Bayesian regression in visual neuroscience
+In this project, I demonstrate how to analyze the relationship between receptive field size and eccentricity using Bayesian methods. I implemented the analyses in R and [JAGS](http://mcmc-jags.sourceforge.net) (a package for doing Bayesian inferencing using Gibbs sampling), and applied them to re-analyze the data published in [Hadjidimitrakis et a. (2019)](https://www.jneurosci.org/content/39/27/5311.abstract) _Journal of Neuroscience_ 39, 5311-5325

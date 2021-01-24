@@ -1,0 +1,32 @@
+
+# standardize x and y into zx and zy
+data {
+    N <- length(y)
+    mx <- mean(x)
+    my <- mean(y)
+    sdx <- sd(x)
+    sdy <- sd(y)
+    for (i in 1:length(y)) {
+        zx[i] <- (x[i] - mx) / sdx
+        zy[i] <- (y[i] - my) / sdy
+    }
+}
+
+model {
+    # likelihood
+    for (i in 1:N) {
+        zy[i] ~ dnorm(mu[i], 1/zsigma^2)
+        mu[i] <- zbeta0 + zbeta1 * zx[i]
+    }
+    
+    # priors - these are all vague prior on standardized scale
+    zbeta0 ~ dnorm( 0, 1/(10)^2 )
+    zbeta1 ~ dnorm( 0, 1/(10)^2 )
+    zsigma ~ dunif( 1.0E-3, 1.0E+3)
+
+    # transform to original scale
+    beta1 <- zbeta1 * sdy / sdx
+    beta0 <- zbeta0 * sdy + my - zbeta1 * mx * sdy / sdx
+    sigma <- zsigma * sdy
+}
+
