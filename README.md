@@ -1,7 +1,7 @@
 # An application of Bayesian regression in visual neuroscience
 
 ## Intro 
-In this project, I will demonstrate how to use Bayesian regression to analyze the relationship between two measured quantities, under the influenced of a third factor. The method is applied to a dataset in visual neuroscience, although the method can be on a wide range of scientific and clinical questions. This project is written in R and the JAGS package, and it is presented asa Jupyter notebook.
+In this project, I will demonstrate how to use Bayesian regression to analyze the relationship between two measured quantities, under the influenced of a third factor. The method is applied to a dataset in visual neuroscience, although the same process can be used on a wide range of scientific and clinical questions. This project is written in R and the JAGS package, and it is presented as a Jupyter notebook.
 
 ## The research question
 In visual neuroscience, the the receptive field (RF) of a neuron is the region in the visual field where a stimulus can elicit it to respond. The size of the receptive field increases with its distance to the fovea. Characterizing this relationship is a fondamental problem in visual neuroscience.
